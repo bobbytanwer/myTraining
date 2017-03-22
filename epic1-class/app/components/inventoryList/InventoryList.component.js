@@ -1,5 +1,5 @@
 /**
- * Created by btanwer on 3/21/2017.
+ * Created by fzemen on 3/14/17.
  */
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -17,14 +17,31 @@ var InventoryList = (function () {
     function InventoryList(inventoryService) {
         this.inventoryService = inventoryService;
         this.context = 'Jewelry Rack';
+        this._currentItem = undefined;
     }
+    Object.defineProperty(InventoryList.prototype, "currentItem", {
+        get: function () {
+            if (this._currentItem !== undefined) {
+                return this._currentItem;
+            }
+            else {
+                return {};
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
     InventoryList.prototype.getItems = function () {
         return this.inventoryService.getItems();
+    };
+    InventoryList.prototype.setCurrentItem = function (item) {
+        this._currentItem = item;
     };
     InventoryList = __decorate([
         core_1.Component({
             selector: 'inventory-list',
-            templateUrl: 'InventoryList.component.html'
+            templateUrl: 'app/components/inventoryList/InventoryList.component.html',
+            styleUrls: ['app/components/inventoryList/InventoryList.component.css']
         }), 
         __metadata('design:paramtypes', [InventoryService_service_1.InventoryService])
     ], InventoryList);

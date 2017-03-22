@@ -1,6 +1,3 @@
-/**
- * Created by btanwer on 3/21/2017.
- */
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -12,23 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var InventoryService_service_1 = require("../../services/InventoryService.service");
-var InventoryList = (function () {
-    function InventoryList(inventoryService) {
-        this.inventoryService = inventoryService;
-        this.context = 'Jewelry Rack';
+require('./rxjs-operators');
+var AppComponent = (function () {
+    function AppComponent() {
     }
-    InventoryList.prototype.getItems = function () {
-        return this.inventoryService.getItems();
-    };
-    InventoryList = __decorate([
+    AppComponent = __decorate([
         core_1.Component({
-            selector: 'inventory-list',
-            templateUrl: 'InventoryList.component.html'
+            selector: 'angular-training',
+            templateUrl: 'app/app.component.html',
+            providers: []
         }), 
-        __metadata('design:paramtypes', [InventoryService_service_1.InventoryService])
-    ], InventoryList);
-    return InventoryList;
+        __metadata('design:paramtypes', [])
+    ], AppComponent);
+    return AppComponent;
 }());
-exports.InventoryList = InventoryList;
-//# sourceMappingURL=InventoryList.component.js.map
+exports.AppComponent = AppComponent;
+//# sourceMappingURL=app.component.js.map
